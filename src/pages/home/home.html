@@ -1,12 +1,124 @@
 <ion-header>
+  <!--
   <ion-navbar transparent>
     <ion-title>Melek Portfolio</ion-title>
   </ion-navbar>
+  -->
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Melek Portfolio</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Melkizedek!</h2>
-  <p>
-    Use the navigation to access features.
-  </p>
+<ion-content>
+
+  <ion-grid padding>
+    <ion-row>
+      <ion-col col-12>
+        <h2>App</h2>
+        <p>
+          Use the navigation to access features.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 text-center padding-top style="font-size: 2.5rem">
+        $765.92
+      </ion-col>
+      <ion-col col-4>
+        <p>
+          total return $
+          <br>
+          <span style="font-size: 1.6rem; font-weight: 500 !important">
+            +$24.92
+          </span>
+        </p>
+        <p>
+          total return %
+          <span style="font-size: 1.6rem; font-weight: 500 !important">
+            +3.36%
+          </span>
+        </p>
+      </ion-col>
+      <ion-col col-8>
+        As of Feb 23 5:21 PM EST
+      </ion-col>
+      <ion-col col-4 text-right>
+        *Disclosures
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-card padding style="background: rgba(0,0,0,.1)">
+    <ion-card-header no-padding style="color: #fff">
+      Stash Cash
+    </ion-card-header>
+    <ion-card-content no-padding>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-8>
+            Available To Use
+          </ion-col>
+          <ion-col text-right col-4>
+            $416.33
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-8>
+            Available To Withdraw
+          </ion-col>
+          <ion-col text-right col-4>
+            $196.33
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <p>&nbsp;</p>
+
+  <!--
+    Portfolio
+    =========
+    8 investments,
+    sorted by investment amount
+    <button ion-button round outline>Sort</button>
+  -->
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <ion-grid>
+        <ion-row style="color: #444">
+          <ion-col col-8>
+            <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
+              {{ item.title }}
+            </p>
+            <p>
+              You invested
+              {{ '$' + item.amount_invested }}
+            </p>
+            <p padding-top>
+              <small>About 14% of your Stash</small>
+            </p>
+          </ion-col>
+          <ion-col col-4 text-right>
+            <p style="font-size: 1.6rem">
+              {{ item.price }}
+            </p>
+            <p>3.99%</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </button>
+  </ion-list>
+
 </ion-content>
