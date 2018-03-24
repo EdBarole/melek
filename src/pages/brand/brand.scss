@@ -19,4 +19,16 @@ page-brand {
     }
     #tabs div.active { border-bottom: 2px solid rgba(0,0,0,.5); opacity: .8; }
 
+    .action-sheet-brand-page {
+        .ion-md-share {
+            color: #ED4248;
+        }
+        .ion-md-heart-outline {
+          color: #31D55F;
+        }
+        .action-sheet-cancel ion-icon {
+          color: #757575;
+        }
+    }
+
 }

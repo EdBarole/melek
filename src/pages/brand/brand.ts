@@ -6,7 +6,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController, Platform } from 'ionic-angular';
 import { IProduct } from '../../interfaces/product';
 
 @Component({ selector: 'page-brand', templateUrl: 'brand.html' })
@@ -15,12 +15,49 @@ export class BrandPage implements OnInit {
 
   public product: IProduct;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public actionSheetCtrl: ActionSheetController,
+    public platform: Platform
+  ) { }
 
   public ngOnInit() {
     this.product = this.navParams.get('product');
     //
     console.log(this.product);
+  }
+
+  public openMenu() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Buy/Sell',
+      cssClass: 'action-sheet-brand-page',
+      buttons: [
+        {
+          text: 'Share',
+          icon: !this.platform.is('ios') ? 'share' : null,
+          handler: () => {
+            console.log('Share clicked');
+          }
+        },
+        {
+          text: 'Favorite',
+          icon: !this.platform.is('ios') ? 'heart-outline' : null,
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          icon: !this.platform.is('ios') ? 'close' : null,
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
 }
