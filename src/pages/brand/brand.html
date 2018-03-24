@@ -1,0 +1,150 @@
+<ion-header>
+  <!--
+  <ion-navbar transparent>
+    <ion-title>Melek Portfolio</ion-title>
+  </ion-navbar>
+  -->
+  <ion-toolbar transparent>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!--
+    <ion-title>Melek Portfolio</ion-title>
+    -->
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="height: 120px">
+
+    <div text-center style="padding: 39px 0; font-size: 2.5rem; font-weight: 300 !important">
+      {{ product.title }}
+    </div>
+
+    <div text-center>
+      <button ion-button color="warning" round>Buy/Sell</button>
+    </div>
+
+  </div>
+
+  <div style="background-color: #fff">
+    
+    <p>&nbsp;</p>
+    
+    <div id="tabs">
+      <div class="active">My Details</div>
+      <div>Overview</div>
+      <div>Peformance</div>
+      <!-- <div>Who Owns It</div> -->
+    </div>
+
+  <!--
+  <ion-card>
+    <img src="img/nin-live.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Nine Inch Nails Live
+        </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely
+        responsible for bringing the music to a mass audience.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  -->
+
+    <p text-center>
+      <span style="font-size: 1.2rem; color: #999">
+        As of Feb 23 5:21 PM EST
+      </span>
+    </p>
+
+    <ion-card style="color: #555">
+      <ion-card-header>
+        Summary
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8>
+              Current Value
+            </ion-col>
+            <ion-col text-right col-4>
+              $103.99
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8>
+              Number of Shares
+            </ion-col>
+            <ion-col text-right col-4>
+              1.28716
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8>
+              You Invested
+            </ion-col>
+            <ion-col text-right col-4>
+              $100
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8>
+              Total Return
+            </ion-col>
+            <ion-col text-right col-4>
+              $3.99 (3.99%)
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8>
+              Percent of Stash
+            </ion-col>
+            <ion-col text-right col-4>
+              about 14%
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-8>
+              Average Price
+            </ion-col>
+            <ion-col text-right col-4>
+              $77.69
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <p>&nbsp;</p>
+
+    <ion-card style="color: #555">
+      <ion-card-header>
+        Summary
+      </ion-card-header>
+      <ion-card-content>
+        <p>Set a recurring investment amount and watch your portfolio grow over time.</p>
+        <p text-center>
+          <button ion-button round outline>
+            Set Auto-Stash
+          </button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+  </div>
+
+</ion-content>

@@ -2,35 +2,59 @@
   "products": [
     {
       "id": 1,
-      "name": "Nike Sneakers",
-      "cost": 10.0,
-      "quantity": 1000,
-      "locationId" : 1,
-      "familyId" : 1
+      "title": "Blue Chips",
+      "amount_invested": 100,
+      "price": 103.99,
+      "purchases": false
     },
     {
       "id": 2,
-      "name": "Addidas EdgeBoot",
-      "cost": 20.0,
-      "quantity": 2000,
-      "locationId" : 1,
-      "familyId" : 2
+      "title": "Delicious Dividends",
+      "amount_invested": 50,
+      "price": 51.89,
+      "purchases": false
     },   
     {
       "id": 3,
-      "name": "Yankees Snapback",
-      "cost": 30.0,
-      "quantity": 3000,
-      "locationId" : 3,
-      "familyId" : 2     
+      "title": "Roll with Buffet",
+      "amount_invested": 45,
+      "price": 51.53,
+      "purchases": false
     },
     {
       "id": 4,
-      "name": "Miami Heat Jersey",
-      "cost": 40.0,
-      "quantity": 4000,
-      "locationId" : 2,
-      "familyId" : 3
+      "title": "Water the World",
+      "amount_invested": 30,
+      "price": 33.32,
+      "purchases": true
+    },
+    {
+      "id": 5,
+      "title": "Aggressive Mix",
+      "amount_invested": 25,
+      "price": 25.52,
+      "purchases": false
+    },
+    {
+      "id": 6,
+      "title": "Defending America",
+      "amount_invested": 25,
+      "price": 28.59,
+      "purchases": true
+    },
+    {
+      "id": 7,
+      "title": "Moderate Mix",
+      "amount_invested": 25,
+      "price": 25.40,
+      "purchases": false
+    },
+    {
+      "id": 8,
+      "title": "Robots Rising",
+      "amount_invested": 25,
+      "price": 29.35,
+      "purchases": true
     }
   ],
   "locations":[

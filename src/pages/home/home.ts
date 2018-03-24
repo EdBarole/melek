@@ -1,32 +1,49 @@
-import { Component } from '@angular/core';
+/**
+ * Component behaves as middleware for the page being rendered.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
+ */
+
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
+import { ProductService } from '../../providers/product';
 
-  public items: Array<any>;
+import { IProduct } from '../../interfaces/product';
 
-  constructor(public navCtrl: NavController) {
+import { BrandPage } from '../../pages/brand/brand'
 
-    this.items = [
-      { title: "Blue Chips", amount_invested: 100, price: 103.99 },
-      { title: "Delicious Dividends", amount_invested: 50, price: 51.89 },
-      { title: "Roll with Buffet", amount_invested: 45, price: 51.53 },
-      { title: "Water the World", amount_invested: 30, price: 33.32 },
-      { title: "Aggressive Mix", amount_invested: 25, price: 25.52 },
-      { title: "Defending America", amount_invested: 25, price: 28.59 },
-      { title: "Moderate Mix", amount_invested: 25, price: 25.40 },
-      { title: "Robots Rising", amount_invested: 25, price: 29.35 }
-    ];
+@Component({ selector: 'page-home', templateUrl: 'home.html' })
 
+export class HomePage implements OnInit {
+
+  public products: IProduct[];
+
+  constructor(public navCtrl: NavController, public client: ProductService) { }
+
+  // Perform a call to fetch on init of component
+  // assigning products as the endpoint parameter
+  // the fetch method returns an observable
+  public ngOnInit() {
+    this.client.fetch().subscribe((products: IProduct[]) => {
+      // console.log(products);
+      this.products = products;
+    });
   }
 
-  itemSelected(item) {
-    console.log('Click on..');
-    console.log(item);
+  /**
+   * Gets product using the id parameter.
+   * 
+   * @param id number
+   * @return IProduct
+   */
+  public productById(id: number) {
+    console.log('Show loading... ');
+    this.client.fetchById(id).subscribe((product: IProduct) => {
+      // console.log(product);
+      this.navCtrl.push(BrandPage, { product: product });
+    });
   }
 
 }

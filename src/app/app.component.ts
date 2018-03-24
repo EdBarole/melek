@@ -1,3 +1,10 @@
+/**
+ * Component behaves as middleware for the page being rendered.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
+ */
+
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -5,10 +12,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-@Component({
-  templateUrl: 'app.html'
-})
+@Component({ templateUrl: 'app.html' })
+
 export class MyApp {
+
+  // make TabsPage the root (or first) page
   rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -19,4 +27,5 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
 }

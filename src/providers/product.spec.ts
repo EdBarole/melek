@@ -2,7 +2,7 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // import {} from 'jasmine';
-import { RestProvider } from './rest';
+import { ProductService } from './product';
 /*
 describe('RestProvider', () => {
     let injector: TestBed;

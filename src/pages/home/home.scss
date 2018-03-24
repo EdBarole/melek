@@ -1,10 +1,32 @@
-page-home {
+/**
+ * Styles only the home page.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
+ */
 
+ page-home {
+
+    ion-title { font-size: 2.2rem;}
     ion-content {
-        @include linear-gradient(left,$mauve);
+        @include linear-gradient(left,$moss);
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
     }
+
+    #tabs { margin-top: 10px; background: none; text-align: center; }
+    #tabs div {
+        display: inline-block;
+        margin: 0 12px;
+        padding: 10px 0;
+        font-size: 1.8rem;
+        font-weight: 500 !important;
+        opacity: .6;
+    }
+    #tabs div.active { border-bottom: 2px solid rgba(255,255,255,.6); opacity: 1; }
+
+    #notice { padding: 7px 0; background-color: rgba(0,0,0,.2); }
+    #notice div { font-size: 1.2rem; font-weight: 500 !important; }
 
 }

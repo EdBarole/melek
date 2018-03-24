@@ -1,24 +1,34 @@
+/**
+ * Module bootstraps the mobile application.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
+ */
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MyApp } from './app.component';
 
-import { HttpClientModule } from '@angular/common/http';
-import { RestProvider } from '../providers/rest/rest';
+import { ProductService } from '../providers/product';
+
+import { AccountPage } from '../pages/account/account';
+import { BrandPage } from '../pages/brand/brand';
+import { ContactPage } from '../pages/contact/contact';
+import { DiscoverPage } from '../pages/discover/discover';
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    AccountPage,
+    BrandPage,
     ContactPage,
+    DiscoverPage,
     HomePage,
     TabsPage
   ],
@@ -30,8 +40,10 @@ import { RestProvider } from '../providers/rest/rest';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    AccountPage,
+    BrandPage,
     ContactPage,
+    DiscoverPage,
     HomePage,
     TabsPage
   ],
@@ -39,7 +51,7 @@ import { RestProvider } from '../providers/rest/rest';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    ProductService
   ]
 })
 export class AppModule {}
