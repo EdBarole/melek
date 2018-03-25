@@ -21,6 +21,7 @@ import { BrandPage } from '../pages/brand/brand';
 import { ContactPage } from '../pages/contact/contact';
 import { DiscoverPage } from '../pages/discover/discover';
 import { HomePage } from '../pages/home/home';
+import { LearnPage } from '../pages/learn/learn';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { PotentialPage } from '../pages/potential/potential';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -34,6 +35,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     ContactPage,
     DiscoverPage,
     HomePage,
+    LearnPage,
     PortfolioPage,
     PotentialPage,
     TabsPage
@@ -52,6 +54,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     ContactPage,
     DiscoverPage,
     HomePage,
+    LearnPage,
     PortfolioPage,
     PotentialPage,
     TabsPage
