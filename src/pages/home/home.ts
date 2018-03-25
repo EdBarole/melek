@@ -18,6 +18,7 @@ import { BrandPage } from '../../pages/brand/brand'
 
 export class HomePage implements OnInit {
 
+  public currentPage: string;
   public products: IProduct[];
 
   constructor(public navCtrl: NavController, public client: ProductService) { }
@@ -30,6 +31,13 @@ export class HomePage implements OnInit {
       // console.log(products);
       this.products = products;
     });
+
+    this.currentPage = 'portfolio';
+  }
+
+  public openPage(slug: string) {
+    // console.log(slug);
+    if (slug) this.currentPage = slug;
   }
 
   /**

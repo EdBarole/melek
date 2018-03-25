@@ -34,17 +34,31 @@ export class BrandPage implements OnInit {
       cssClass: 'action-sheet-brand-page',
       buttons: [
         {
-          text: 'Share',
+          text: 'Buy',
           icon: !this.platform.is('ios') ? 'share' : null,
           handler: () => {
             console.log('Share clicked');
           }
         },
         {
-          text: 'Favorite',
+          text: 'Update Auto-Stash',
           icon: !this.platform.is('ios') ? 'heart-outline' : null,
           handler: () => {
             console.log('Favorite clicked');
+          }
+        },
+        {
+          text: 'Sell',
+          icon: !this.platform.is('ios') ? 'trash' : null,
+          handler: () => {
+            console.log('Sell clicked');
+          }
+        },
+        {
+          text: 'Sell All',
+          icon: !this.platform.is('ios') ? 'trash' : null,
+          handler: () => {
+            console.log('Sell All clicked');
           }
         },
         {

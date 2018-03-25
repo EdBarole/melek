@@ -25,6 +25,7 @@
         opacity: .6;
     }
     #tabs div.active { border-bottom: 2px solid rgba(255,255,255,.6); opacity: 1; }
+    #tabs div:focus { opacity: 1; }
 
     #notice { padding: 7px 0; background-color: rgba(0,0,0,.2); }
     #notice div { font-size: 1.2rem; font-weight: 500 !important; }
