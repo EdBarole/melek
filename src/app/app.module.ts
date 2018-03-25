@@ -16,6 +16,7 @@ import { MyApp } from './app.component';
 import { ProductService } from '../providers/product';
 
 import { AccountPage } from '../pages/account/account';
+import { BalancePage } from '../pages/balance/balance';
 import { BrandPage } from '../pages/brand/brand';
 import { ContactPage } from '../pages/contact/contact';
 import { DiscoverPage } from '../pages/discover/discover';
@@ -28,6 +29,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   declarations: [
     MyApp,
     AccountPage,
+    BalancePage,
     BrandPage,
     ContactPage,
     DiscoverPage,
@@ -45,6 +47,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   entryComponents: [
     MyApp,
     AccountPage,
+    BalancePage,
     BrandPage,
     ContactPage,
     DiscoverPage,
