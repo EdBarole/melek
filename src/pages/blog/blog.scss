@@ -1,0 +1,10 @@
+page-blog {
+
+    ion-content {
+        @include linear-gradient(left,$moss);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+    
+}

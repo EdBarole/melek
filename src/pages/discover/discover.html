@@ -1,20 +1,44 @@
 <!--
-  Template for the DiscoverPage page.
+Template for the DiscoverPage page.
 
-  @author Sebastian Njose <s3bastian06@gmail.com>
-  @license http://www.github.com/sebastiannjose
+@author Sebastian Njose <s3bastian06@gmail.com>
+@license http://www.github.com/sebastiannjose
 -->
-<ion-header>
+<ion-header style="height: auto">
 
-  <ion-navbar>
-    <ion-title>discover</ion-title>
-  </ion-navbar>
+  <ion-toolbar transparent>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+        Discover
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <div id="tabs">
+    <div [ngClass]="{ 'active': currentPage=='believe' }" (click)="openPage('believe')">
+      I Believe
+    </div>
+    <div [ngClass]="{ 'active': currentPage=='want' }" (click)="openPage('want')">
+      I Want
+    </div>
+    <div [ngClass]="{ 'active': currentPage=='like' }" (click)="openPage('like')">
+      I Like
+    </div>
+    <div [ngClass]="{ 'active': currentPage=='bookmarks' }" (click)="openPage('bookmarks')">
+      Bookmarks
+    </div>
+  </div>
 
 </ion-header>
 
-
-<ion-content padding>
-  <p style="font-size: 2.5rem; color: black">
-    Content for the discover page.
-  </p>
+<ion-content>
+    <page-believe *ngIf="currentPage=='believe'"></page-believe>
 </ion-content>

@@ -1,0 +1,26 @@
+<ion-list>
+  <button ion-item *ngFor="let item of products" (click)="productById(item.id)">
+    <ion-grid>
+      <ion-row style="color: #444">
+        <ion-col col-8>
+          <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
+            {{ item.title }}
+          </p>
+          <p>
+            You invested
+            {{ '$' + item.amount_invested }}
+          </p>
+          <p padding-top>
+            <small>About 14% of your Stash</small>
+          </p>
+        </ion-col>
+        <ion-col col-4 text-right>
+          <p style="font-size: 1.6rem">
+            {{ item.price }}
+          </p>
+          <p>3.99%</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </button>
+</ion-list>

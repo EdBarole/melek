@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 /**
- * Generated class for the DiscoverPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * Component behaves as middleware for the page being rendered.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
  */
 
-@IonicPage()
-@Component({
-  selector: 'page-discover',
-  templateUrl: 'discover.html',
-})
-export class DiscoverPage {
+import { Component, OnInit } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+@Component({ selector: 'page-discover', templateUrl: 'discover.html' })
+
+export class DiscoverPage implements OnInit {
+
+  public currentPage: string;
+
+  constructor(public navCtrl: NavController) { }
+
+  public ngOnInit() {
+    this.currentPage = 'believe';
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DiscoverPage');
+  public openPage(slug: string) {
+    // console.log(slug);
+    if (slug) this.currentPage = slug;
   }
 
 }

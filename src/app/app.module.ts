@@ -14,9 +14,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
 
 import { ProductService } from '../providers/product';
+import { PostService } from '../providers/post';
 
 import { AccountPage } from '../pages/account/account';
 import { BalancePage } from '../pages/balance/balance';
+import { BelievePage } from '../pages/believe/believe';
+import { BlogPage } from '../pages/blog/blog';
 import { BrandPage } from '../pages/brand/brand';
 import { ContactPage } from '../pages/contact/contact';
 import { DiscoverPage } from '../pages/discover/discover';
@@ -31,6 +34,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     AccountPage,
     BalancePage,
+    BelievePage,
+    BlogPage,
     BrandPage,
     ContactPage,
     DiscoverPage,
@@ -50,6 +55,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     MyApp,
     AccountPage,
     BalancePage,
+    BelievePage,
+    BlogPage,
     BrandPage,
     ContactPage,
     DiscoverPage,
@@ -63,7 +70,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ProductService
+    ProductService,
+    PostService
   ]
 })
 export class AppModule {}

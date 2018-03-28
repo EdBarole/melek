@@ -1,5 +1,5 @@
 /**
- * Component behaves as middleware for the page being rendered.
+ * Component behaves as middleware for the page being rendered
  * 
  * @author Sebastian Njose <s3bastian06@gmail.com>
  * @license http://www.github.com/sebastiannjose
@@ -7,17 +7,20 @@
 
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { IPost } from '../../interfaces/post';
 
-@Component({ selector: 'page-potential', templateUrl: 'potential.html' })
+@Component({ selector: 'page-blog', templateUrl: 'blog.html' })
 
-export class PotentialPage implements OnInit {
+export class BlogPage implements OnInit {
 
-  public brightness: number = 20;
+  public post: IPost;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   public ngOnInit() {
-    console.log('Potential Page ... ready.');
+    this.post = this.navParams.get('post');
+    //
+    console.log(this.post);
   }
 
 }

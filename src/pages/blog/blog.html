@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar transparent>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      {{ post.title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- TABS must go! -->
+
+<ion-content>
+  <div padding style="background-color: white">
+      <h1>
+        {{ post.title }}
+      </h1>
+      {{ post.contents }}
+  </div>
+</ion-content>

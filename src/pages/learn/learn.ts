@@ -1,22 +1,50 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 /**
- * Generated class for the LearnPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * Component behaves as middleware for the page being rendered.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
  */
 
-@IonicPage()
+import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+import { PostService } from '../../providers/post';
+
+import { IPost } from '../../interfaces/post';
+
+import { BlogPage } from '../../pages/blog/blog';
+
 @Component({ selector: 'page-learn', templateUrl: 'learn.html' })
 
-export class LearnPage {
+export class LearnPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+  public posts: IPost[];
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LearnPage');
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public client: PostService
+  ) { }
+
+  public ngOnInit() {
+    this.client.fetch().subscribe((posts: IPost[]) => {
+      // console.log(posts);
+      this.posts = posts;
+    });
+  }
+
+  /**
+   * Gets post using the id parameter.
+   * 
+   * @param id number
+   * @return IPost
+   */
+  public postById(id: number) {
+    console.log('Show loading... ');
+    this.client.fetchById(id).subscribe((post: IPost) => {
+      // console.log(post);
+      this.navCtrl.push(BlogPage, { post: post });
+    });
   }
 
 }

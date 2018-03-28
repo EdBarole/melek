@@ -14,9 +14,9 @@ import { IProduct } from '../../interfaces/product';
 
 import { BrandPage } from '../../pages/brand/brand'
 
-@Component({ selector: 'page-portfolio', templateUrl: 'portfolio.html' })
+@Component({ selector: 'page-believe', templateUrl: 'believe.html' })
 
-export class PortfolioPage implements OnInit {
+export class BelievePage implements OnInit {
 
   public products: IProduct[];
 

@@ -1,3 +1,25 @@
-<div padding>
-  <h1>=== Learn!</h1>
+<div>
+
+  <ion-list>
+      <button ion-item *ngFor="let item of posts" (click)="postById(item.id)">
+        <ion-grid>
+          <ion-row style="color: #444">
+            <ion-col col-8>
+              <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
+                {{ item.title }}
+              </p>
+              <p padding-top>
+                <small>
+                  {{ item.summary }}
+                </small>
+              </p>
+            </ion-col>
+            <ion-col col-4 text-right>
+              <!-- <ion-img width="100%" src="http://127.0.0.1:8000/imgs/pic.jpg"></ion-img> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </button>
+    </ion-list>
+
 </div>
