@@ -17,27 +17,27 @@
       </button>
     </ion-buttons>
   </ion-toolbar>
-  
-  <div id="tabs">
-    <div [ngClass]="{ 'active': currentPage=='portfolio' }" (click)="openPage('portfolio')">
+
+  <ion-segment [(ngModel)]="account" [color]="!isAndroid ? 'light' : 'primary'">
+    <ion-segment-button value="portfolio">
       Portfolio
-    </div>
-    <div [ngClass]="{ 'active': currentPage=='balance' }" (click)="openPage('balance')">
+    </ion-segment-button>
+    <ion-segment-button value="balance">
       Balance
-    </div>
-    <div [ngClass]="{ 'active': currentPage=='potential' }" (click)="openPage('potential')">
+    </ion-segment-button>
+    <ion-segment-button value="potential">
       Potential
-    </div>
-    <div [ngClass]="{ 'active': currentPage=='learn' }" (click)="openPage('learn')">
+    </ion-segment-button>
+    <ion-segment-button value="learn">
       Learn
-    </div>
-  </div>
+    </ion-segment-button>
+  </ion-segment>
 
 </ion-header>
 
-<ion-content>
-  <page-portfolio *ngIf="currentPage=='portfolio'"></page-portfolio>
-  <page-balance *ngIf="currentPage=='balance'"></page-balance>
-  <page-potential *ngIf="currentPage=='potential'"></page-potential>
-  <page-learn *ngIf="currentPage=='learn'"></page-learn>
+<ion-content [ngSwitch]="account">
+  <page-portfolio *ngSwitchCase="'portfolio'"></page-portfolio>
+  <page-balance *ngSwitchCase="'balance'"></page-balance>
+  <page-potential *ngSwitchCase="'potential'"></page-potential>
+  <page-learn *ngSwitchCase="'learn'"></page-learn>
 </ion-content>

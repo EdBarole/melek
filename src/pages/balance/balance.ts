@@ -1,8 +1,8 @@
 /**
- * Generated class for the BalancePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+ * Component behaves as middleware for the page being rendered.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
  */
 
 import { Component } from '@angular/core';

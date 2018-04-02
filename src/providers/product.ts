@@ -13,8 +13,8 @@ import { IProduct } from '../interfaces/product';
 @Injectable()
 export class ProductService {
 
-  private baseUrl: string = "http://localhost:3000";
-  private apiEndpoint: string = this.baseUrl + "/products";
+  private baseUrl: string = "http://localhost:8000/api";
+  private apiEndpoint: string = this.baseUrl + "/brands";
 
   constructor(public httpClient: HttpClient) { }
 

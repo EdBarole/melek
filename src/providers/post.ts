@@ -13,7 +13,7 @@ import { IPost } from '../interfaces/post';
 @Injectable()
 export class PostService {
 
-  private baseUrl: string = "http://localhost:3000";
+  private baseUrl: string = "http://localhost:8000/api";
   private apiEndpoint: string = this.baseUrl + "/posts";
 
   constructor(public httpClient: HttpClient) { }

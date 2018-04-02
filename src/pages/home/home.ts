@@ -18,6 +18,7 @@ export class HomePage implements OnInit {
 
   public ngOnInit() {
     this.currentPage = 'portfolio';
+    /** set current model to portfolio **/
   }
 
   public openPage(slug: string) {

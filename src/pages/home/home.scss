@@ -15,17 +15,19 @@
         background-size: cover;
     }
 
-    #tabs { margin-top: 10px; background: none; text-align: center; }
-    #tabs div {
-        display: inline-block;
-        margin: 0 12px;
-        padding: 10px 0;
-        font-size: 1.8rem;
+    ion-segment { margin-top: 10px; border: none !important; text-align: center; }
+    ion-segment-button {
+        // display: inline-block;
+        // margin: 0 12px;
+        // padding: 10px 0;
+        background: none !important;
+        border: none !important;
+        font-size: 1.8rem !important;
         font-weight: 500 !important;
         opacity: .6;
     }
-    #tabs div.active { border-bottom: 2px solid rgba(255,255,255,.6); opacity: 1; }
-    #tabs div:focus { opacity: 1; }
+    ion-segment-button.active { border-bottom: 2px solid rgba(255,255,255,.6); opacity: 1; }
+    ion-segment-button:focus { opacity: 1; }
 
     #notice { padding: 7px 0; background-color: rgba(0,0,0,.2); }
     #notice div { font-size: 1.2rem; font-weight: 500 !important; }
