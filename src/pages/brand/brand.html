@@ -30,6 +30,9 @@
     </div>
 
     <div text-center class="action-sheet-brand-page">
+      <!-- Add to Portfolio + -->
+
+      <!-- Buy/Sell -->
       <button ion-button color="warning" round (click)="openMenu()">Buy/Sell</button>
     </div>
 
@@ -38,13 +41,21 @@
   <div style="background-color: #fff">
     
     <p>&nbsp;</p>
+
+    <ion-segment [(ngModel)]="choice" [color]="!isAndroid ? 'light' : 'primary'">
+      <!-- <ion-segment-button value="my-details">My Details</ion-segment-button> -->
+      <ion-segment-button value="overview">Overview</ion-segment-button>
+      <ion-segment-button value="performance">Performance</ion-segment-button>
+      <ion-segment-button value="who-owns-it">Who Owns It</ion-segment-button>
+    </ion-segment>
     
+    <!--
     <div id="tabs">
       <div class="active">My Details</div>
       <div>Overview</div>
       <div>Peformance</div>
-      <!-- <div>Who Owns It</div> -->
     </div>
+    -->
 
   <!--
   <ion-card>
@@ -61,89 +72,118 @@
   </ion-card>
   -->
 
-    <p text-center>
-      <span style="font-size: 1.2rem; color: #999">
-        As of Feb 23 5:21 PM EST
-      </span>
-    </p>
+    <div [ngSwitch]="choice">
 
-    <ion-card style="color: #555">
-      <ion-card-header>
-        Summary
-      </ion-card-header>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row>
-            <ion-col col-8>
-              Current Value
-            </ion-col>
-            <ion-col text-right col-4>
-              $103.99
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-8>
-              Number of Shares
-            </ion-col>
-            <ion-col text-right col-4>
-              1.28716
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-8>
-              You Invested
-            </ion-col>
-            <ion-col text-right col-4>
-              $100
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-8>
-              Total Return
-            </ion-col>
-            <ion-col text-right col-4>
-              $3.99 (3.99%)
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-8>
-              Percent of Stash
-            </ion-col>
-            <ion-col text-right col-4>
-              about 14%
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-8>
-              Average Price
-            </ion-col>
-            <ion-col text-right col-4>
-              $77.69
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-
-    <p>&nbsp;</p>
-
-    <ion-card style="color: #555">
-      <ion-card-header>
-        Summary
-      </ion-card-header>
-      <ion-card-content>
-        <p>Set a recurring investment amount and watch your portfolio grow over time.</p>
+      <div *ngSwitchCase="'my-details'">
         <p text-center>
-          <button ion-button round outline>
-            Set Auto-Stash
-          </button>
+          <span style="font-size: 1.2rem; color: #999">
+            As of Feb 23 5:21 PM EST
+          </span>
         </p>
-      </ion-card-content>
-    </ion-card>
+        <ion-card style="color: #555">
+          <ion-card-header>
+            Summary
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-8>
+                  Current Value
+                </ion-col>
+                <ion-col text-right col-4>
+                  $103.99
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8>
+                  Number of Shares
+                </ion-col>
+                <ion-col text-right col-4>
+                  1.28716
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8>
+                  You Invested
+                </ion-col>
+                <ion-col text-right col-4>
+                  $100
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8>
+                  Total Return
+                </ion-col>
+                <ion-col text-right col-4>
+                  $3.99 (3.99%)
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8>
+                  Percent of Stash
+                </ion-col>
+                <ion-col text-right col-4>
+                  about 14%
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-8>
+                  Average Price
+                </ion-col>
+                <ion-col text-right col-4>
+                  $77.69
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+        <p>&nbsp;</p>
+        <ion-card style="color: #555">
+          <ion-card-header>
+            Summary
+          </ion-card-header>
+          <ion-card-content>
+            <p>Set a recurring investment amount and watch your portfolio grow over time.</p>
+            <p text-center>
+              <button ion-button round outline>
+                Set Auto-Stash
+              </button>
+            </p>
+          </ion-card-content>
+        </ion-card>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
 
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
+      <div *ngSwitchCase="'overview'">
+        <h1>++ Overview</h1>
+        <p>These behemoth blue-chip companies tend to be sturdy and strong when others may falter. Thanks to their size, they're likely to be more stable than smaller fish in the pond.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h2>Risk level</h2>
+        <p>conservative</p>
+        <h2>Top Exposure</h2>% of Total
+        <p>Apple Inc.</p>
+        <p>Microsoft Corp.</p>
+        <p>Facebook Class A Inc</p>
+      </div>
+
+      <div *ngSwitchCase="'performance'">
+        <h1>-- Performance -</h1>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+
+      <div *ngSwitchCase="'who-owns-it'">
+        <h1>.. Who owns it</h1>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+
+    </div>
     
   </div>
 
