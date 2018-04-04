@@ -7,8 +7,8 @@ page-brand {
         background-size: cover;
     }
 
-    #tabs { margin-top: 10px; background: none; text-align: center; }
-    #tabs div {
+    ion-segment { margin-top: 10px; background: none; text-align: center; }
+    ion-segment-button {
         display: inline-block;
         margin: 0 14px;
         padding: 10px 0;
@@ -17,7 +17,7 @@ page-brand {
         text-transform: uppercase;
         opacity: .4;
     }
-    #tabs div.active { border-bottom: 2px solid rgba(0,0,0,.5); opacity: .8; }
+    ion-segment-button.active { border-bottom: 2px solid rgba(0,0,0,.5); opacity: .8; }
 
     .action-sheet-brand-page {
         .ion-md-share {

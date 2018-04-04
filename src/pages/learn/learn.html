@@ -1,5 +1,19 @@
 <div>
 
+  <div padding>
+    <ion-card>
+      <img src="http://localhost:8000/pic.jpg"/>
+      <ion-card-content text-center>
+        <ion-card-title>
+          Investing 101: A Helpful Glossary of Finance Terms
+        </ion-card-title>
+        <p>
+          Are you a beginner investor? This handy guide has all the terms you need to get started.
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
   <ion-list>
       <button ion-item *ngFor="let item of posts" (click)="postById(item.id)">
         <ion-grid>
@@ -9,7 +23,7 @@
               <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
                 {{ item.title }}
               </p>
-              <p padding-top>
+              <p>
                 <small>
                   {{ item.summary }}
                 </small>
