@@ -5,14 +5,13 @@
  * @license http://www.github.com/sebastiannjose
  */
 
-import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
 
-@IonicPage()
 @Component({ selector: 'page-balance', templateUrl: 'balance.html' })
 
-export class BalancePage {
+export class BalancePage implements OnInit {
 
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('doughnutCanvas') doughnutCanvas;
@@ -24,7 +23,9 @@ export class BalancePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  ionViewDidLoad() {
+  ngOnInit() {
+
+    console.log('Drawing charts!!!');
     
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
