@@ -2,23 +2,13 @@
   <button ion-item *ngFor="let item of products" (click)="productById(item.id)">
     <ion-grid>
       <ion-row style="color: #444">
-        <ion-col col-8>
+        <ion-col>
+          <img src="http://localhost:8000/pic.jpg" width="60" height="60" style="float: left; margin-right: 1rem; border-radius: 50%">
+          <ion-icon name="bookmark" style="float: right"></ion-icon>
           <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
             {{ item.title }}
           </p>
-          <p>
-            You invested
-            {{ '$' + item.amount_invested }}
-          </p>
-          <p padding-top>
-            <small>About 14% of your Stash</small>
-          </p>
-        </ion-col>
-        <ion-col col-4 text-right>
-          <p style="font-size: 1.6rem">
-            {{ item.price }}
-          </p>
-          <p>3.99%</p>
+          <p>A simple way to invest in a little of everything, designed for moderate risk investors.</p>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -1,18 +1,177 @@
 <!--
-  Generated template for the AccountPage page.
+Template for the AccountPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
+@author Sebastian Njose <s3bastian06@gmail.com>
+@license http://www.github.com/sebastiannjose
 -->
-<ion-header>
+<ion-header style="height: auto">
 
-  <ion-navbar>
-    <ion-title>account</ion-title>
-  </ion-navbar>
+  <ion-toolbar transparent>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+        Account
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 
+<ion-content>
+  
+  <div text-center>
+    <img src="http://localhost:8000/pic.jpg" width="60" height="60" style="border-radius: 50%">
+    <h2>Aaron Malmoe</h2>
+    <p>Risk Profile - Modeate</p>
+  </div>
 
-<ion-content padding>
-  Content for the account page.
+  <ion-segment [(ngModel)]="tabAccount" [color]="!isAndroid ? 'light' : 'primary'">
+    <ion-segment-button value="account">Account</ion-segment-button>
+    <ion-segment-button value="activity">Activity</ion-segment-button>
+    <ion-segment-button value="notifications">
+      Notifications
+      <ion-badge color="secondary" item-end>6</ion-badge>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="tabAccount">
+
+    <div *ngSwitchCase="'account'">
+      <ion-list>
+        <button ion-item>
+          Give $5, Earn $5
+        </button>
+        <button ion-item>
+          Auto-Stash
+        </button>
+      </ion-list>
+      <br />
+      <ion-list>
+        <button ion-item>
+          Bank Account
+        </button>
+        <button ion-item>
+          Transfer to Stash
+        </button>
+        <button ion-item>
+          Transfer to Bank
+        </button>
+        <button ion-item>
+          Trade Confirmations
+        </button>
+        <button ion-item>
+          Tax Documents
+        </button>
+        <button ion-item>
+          Promotion Code
+        </button>
+      </ion-list>
+      <br />
+      <ion-list>
+        <button ion-item>
+          Email Us
+        </button>
+        <button ion-item>
+          FAQs
+        </button>
+      </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'activity'">
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>Pending</ion-card-title>
+          <ion-list>
+            <button ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    NUMERICA CREDIT UNION
+                    <div style="font-size: 1rem">Deposit</div>
+                  </ion-col>
+                  <ion-col text-right>
+                    $100.00
+                    <div style="font-size: 1rem">Jun 4 2:06 AM</div>                  
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </button>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+            May 2017
+          </ion-card-title>
+          <ion-list>
+            <button ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    Moderate Mix
+                    <div style="font-size: 1rem">Purchase</div>
+                  </ion-col>
+                  <ion-col text-right>
+                    $50.00
+                    <div style="font-size: 1rem">May 23 10:06 AM</div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </button>
+          </ion-list>
+          <ion-list>
+            <button ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    Young Money
+                    <div style="font-size: 1rem">Purchase</div>
+                  </ion-col>
+                  <ion-col text-right>
+                    $50.00
+                    <div style="font-size: 1rem">May 23 10:46 AM</div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </button>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'notifications'">
+      <ion-list>
+        <button ion-item>
+          <img src="http://localhost:8000/pic.jpg" width="60" height="60" style="float: left; margin-right: 1rem; border-radius: 50%">
+          <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
+            Nice! Your pending investment orders have bee...
+          </p>
+          <div style="font-size: 1rem">13 days ago</div>
+        </button>
+        <button ion-item>
+          <img src="http://localhost:8000/pic.jpg" width="60" height="60" style="float: left; margin-right: 1rem; border-radius: 50%">
+          <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
+            Nice! Your pending investment orders have bee...
+          </p>
+          <div style="font-size: 1rem">13 days ago</div>
+        </button>
+        <button ion-item>
+          <img src="http://localhost:8000/pic.jpg" width="60" height="60" style="float: left; margin-right: 1rem; border-radius: 50%">
+          <p style="font-size: 1.6rem; font-weight: 500 !important; color: #444">
+            Nice! Your deposit cleared -- you've got available cash in...
+          </p>
+          <div style="font-size: 1rem">17 days ago</div>
+        </button>
+      </ion-list>
+    </div>
+  </div>
+
 </ion-content>

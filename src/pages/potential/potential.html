@@ -1,15 +1,89 @@
+<!--
+Template for the PotentialPage page.
+
+@author Sebastian Njose <s3bastian06@gmail.com>
+@license http://www.github.com/sebastiannjose
+-->
 <div padding>
 
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <h1>Potential</h1>
-  <p>&nbsp;</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>After 1 year</ion-col>
+      <ion-col text-right>$101.90</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="progress-outer">
+          <div class="progress-inner" style="width: 48%">
+              48%
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>After 5 year</ion-col>
+      <ion-col text-right>$101.90</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="progress-outer">
+          <div class="progress-inner" style="width: 48%">
+              48%
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>After 10 year</ion-col>
+      <ion-col text-right>$101.90</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!--
+				<div loader style="width: 48%;">
+					<p percent>48%</p>
+        </div>
+        -->
+        <div class="progress-outer">
+          <div class="progress-inner" style="width: 35%">
+              35%
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <ion-item>
-    <ion-range [(ngModel)]="brightness">
-      <ion-icon range-left small name="sunny"></ion-icon>
-      <ion-icon range-right name="sunny"></ion-icon>
-    </ion-range>
-  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Potential Monthly Deposit</ion-col>
+      <ion-col text-right>$0/mo</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-range [(ngModel)]="brightness">
+            <ion-icon range-left small name="sunny"></ion-icon>
+            <ion-icon range-right name="sunny"></ion-icon>
+          </ion-range>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Growth Potential</ion-col>
+      <ion-col text-right>$0/mo</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-range [(ngModel)]="brightness">
+            <ion-icon range-left small name="sunny"></ion-icon>
+            <ion-icon range-right name="sunny"></ion-icon>
+          </ion-range>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button (click)="presentModal()">Set Auto-Stash</button>
 
 </div>

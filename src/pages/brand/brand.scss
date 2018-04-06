@@ -5,19 +5,18 @@ page-brand {
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
+        line-height: 2.6rem;
     }
 
     ion-segment { margin-top: 10px; background: none; text-align: center; }
     ion-segment-button {
-        display: inline-block;
-        margin: 0 14px;
-        padding: 10px 0;
         font-size: 1.4rem;
         font-weight: 500 !important;
         text-transform: uppercase;
+        color: #222 !important;
         opacity: .4;
     }
-    ion-segment-button.active { border-bottom: 2px solid rgba(0,0,0,.5); opacity: .8; }
+    // ion-segment-button.active { border-bottom: 2px solid rgba(0,0,0,.5); opacity: .8; }
 
     .action-sheet-brand-page {
         .ion-md-share {

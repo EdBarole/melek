@@ -1,10 +1,3 @@
-/**
- * Module bootstraps the mobile application.
- * 
- * @author Sebastian Njose <s3bastian06@gmail.com>
- * @license http://www.github.com/sebastiannjose
- */
-
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +11,7 @@ import { ProductService } from '../providers/product';
 import { PostService } from '../providers/post';
 
 import { AccountPage } from '../pages/account/account';
+import { AutoStashPage } from '../pages/auto-stash/auto-stash';
 import { BalancePage } from '../pages/balance/balance';
 import { BelievePage } from '../pages/believe/believe';
 import { BlogPage } from '../pages/blog/blog';
@@ -31,10 +25,18 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { PotentialPage } from '../pages/potential/potential';
 import { TabsPage } from '../pages/tabs/tabs';
 
+/**
+ * Module bootstraps the mobile application.
+ * 
+ * @author Sebastian Njose <s3bastian06@gmail.com>
+ * @license http://www.github.com/sebastiannjose
+ */
+
 @NgModule({
   declarations: [
     MyApp,
     AccountPage,
+    AutoStashPage,
     BalancePage,
     BelievePage,
     BlogPage,
@@ -58,6 +60,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   entryComponents: [
     MyApp,
     AccountPage,
+    AutoStashPage,
     BalancePage,
     BelievePage,
     BlogPage,

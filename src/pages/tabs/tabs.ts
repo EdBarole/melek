@@ -8,6 +8,7 @@
 import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
+import { LearnPage } from '../learn/learn';
 import { AccountPage } from '../account/account';
 import { DiscoverPage } from '../discover/discover';
 
@@ -15,19 +16,11 @@ import { DiscoverPage } from '../discover/discover';
 
 export class TabsPage {
 
-  constructor() {
-    // Set defaults
-  }
+  constructor() { }
 
   public tab1Root = HomePage;
   public tab2Root = DiscoverPage;
-  public tab3Root = AccountPage;
-
-  /**
-   * Method clears active user session.
-   */
-  public logOut() {
-    console.log('Logout from this account.');
-  }
+  public tab3Root = LearnPage;
+  public tab4Root = AccountPage;
 
 }

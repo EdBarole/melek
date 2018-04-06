@@ -1,29 +1,29 @@
-<ion-header>
-  <!--
-  <ion-navbar transparent>
-    <ion-title>Melek Portfolio</ion-title>
-  </ion-navbar>
-  -->
-  <ion-toolbar transparent>
-    <ion-buttons start>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="search"></ion-icon>
-      </button>
-    </ion-buttons>
+<ion-content style="background: url(http://localhost:8000/pic.jpg) center no-repeat; background-size: cover">
+
+  <ion-header>
     <!--
-    <ion-title>Melek Portfolio</ion-title>
+    <ion-navbar transparent>
+      <ion-title>Melek Portfolio</ion-title>
+    </ion-navbar>
     -->
-    <ion-buttons end>
-      <button ion-button icon-only color="royal">
-        <ion-icon name="person-add"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar transparent>
+      <ion-buttons start>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <!--
+      <ion-title>Melek Portfolio</ion-title>
+      -->
+      <ion-buttons end>
+        <button ion-button icon-only color="royal">
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
-
-  <div style="background: url(http://localhost:8000/pic.jpg) center no-repeat; background-size: cover; height: 120px">
+  <div style="clear: both; height: 120px">
 
     <div text-center style="padding: 39px 0; font-size: 2.5rem; font-weight: 300 !important">
       {{ product.title }}
@@ -33,7 +33,9 @@
       <!-- Add to Portfolio + -->
 
       <!-- Buy/Sell -->
-      <button ion-button color="warning" round (click)="openMenu()">Buy/Sell</button>
+      <button ion-button color="warning" (click)="openMenu()">
+        Add to Portfolio
+      </button>
     </div>
 
   </div>
@@ -42,14 +44,14 @@
     
     <p>&nbsp;</p>
 
-    <ion-segment [(ngModel)]="choice" [color]="!isAndroid ? 'light' : 'primary'">
+    <ion-segment [(ngModel)]="tabBrand" [color]="!isAndroid ? 'light' : 'primary'">
       <!-- <ion-segment-button value="my-details">My Details</ion-segment-button> -->
       <ion-segment-button value="overview">Overview</ion-segment-button>
       <ion-segment-button value="performance">Performance</ion-segment-button>
       <ion-segment-button value="who-owns-it">Who Owns It</ion-segment-button>
     </ion-segment>
     
-    <div [ngSwitch]="choice">
+    <div padding [ngSwitch]="tabBrand">
 
       <div *ngSwitchCase="'my-details'">
         <p text-center>

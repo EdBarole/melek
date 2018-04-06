@@ -16,7 +16,7 @@
     </ion-buttons>
   </ion-toolbar>
 
-  <ion-segment [(ngModel)]="account" [color]="!isAndroid ? 'light' : 'primary'">
+  <ion-segment [(ngModel)]="tabHome" [color]="!isAndroid ? 'light' : 'primary'">
     <ion-segment-button value="portfolio">Portfolio</ion-segment-button>
     <ion-segment-button value="balance">Balance</ion-segment-button>
     <ion-segment-button value="potential">Potential</ion-segment-button>
@@ -25,7 +25,7 @@
 
 </ion-header>
 
-<ion-content [ngSwitch]="account">
+<ion-content [ngSwitch]="tabHome">
   <page-portfolio *ngSwitchCase="'portfolio'"></page-portfolio>
   <page-balance *ngSwitchCase="'balance'"></page-balance>
   <page-potential *ngSwitchCase="'potential'"></page-potential>

@@ -5,25 +5,19 @@
  * @license http://www.github.com/sebastiannjose
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({ selector: 'page-home', templateUrl: 'home.html' })
 
 export class HomePage implements OnInit {
 
-  public currentPage: string;
+  @Input() tabHome: string = 'portfolio';
 
   constructor(public navCtrl: NavController) { }
 
   public ngOnInit() {
-    this.currentPage = 'portfolio';
-    /** set current model to portfolio **/
-  }
-
-  public openPage(slug: string) {
-    // console.log(slug);
-    if (slug) this.currentPage = slug;
+    // console.log('Init', this.currentPage);
   }
 
 }

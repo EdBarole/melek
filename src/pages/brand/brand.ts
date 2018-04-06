@@ -5,7 +5,7 @@
  * @license http://www.github.com/sebastiannjose
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, Platform } from 'ionic-angular';
 import { IProduct } from '../../interfaces/product';
 
@@ -13,6 +13,7 @@ import { IProduct } from '../../interfaces/product';
 
 export class BrandPage implements OnInit {
 
+  @Input() tabBrand: string = 'overview';
   public product: IProduct;
 
   constructor(
